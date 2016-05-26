@@ -154,7 +154,7 @@ use Yuloh\Crux\Application as App;
 $container = new Container();
 $app       = new App($container);
 
-$app->on(Event::REQUEST_RECEIVED, function (ServerRequest $request, Response$response) use ($container) {
+$app->on(Event::REQUEST_RECEIVED, function (ServerRequest $request, Response $response) use ($container) {
     $container->set('Psr\Http\Message\ServerRequestInterface', $request);
     $container->set('Psr\Http\Message\RequestInterface', $request);
     $container->set('Psr\Http\Message\ResponseInterface', $response);
